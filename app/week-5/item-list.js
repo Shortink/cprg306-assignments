@@ -13,20 +13,18 @@ export default function ItemList() {
 
     const handleName = (event) => {
         setSortBy("name")
-        event.target.className = ("bg-purple-700 p-1 m-2 w-28 rounded");
     }
 
     const handleCategory = (event) => {
         setSortBy("category")
-        event.target.className = ("bg-purple-700 p-1 m-2 w-28 rounded");
     }
 
     return(
         <main>
             <div>
                 <h1>Sort By:</h1>
-                <button id = "name" className=" bg-purple-400 p-1 m-2 w-28 rounded" onClick={handleName}>Name</button>
-                <button id = "category" className="bg-purple-400 p-1 m-2 w-28 rounded" onClick={handleCategory}>Category</button>
+                <button className={sortBy === "name" ? "bg-purple-200 p-1 m-2 w-28 rounded": "bg-purple-300 p-1 m-2 w-28 rounded" } onClick={handleName}>Name</button>
+                <button className={sortBy === "category" ? "bg-purple-200 p-1 m-2 w-28 rounded": "bg-purple-300 p-1 m-2 w-28 rounded" } onClick={handleCategory}>Category</button>
                 <button className="bg-purple-400 p-1 m-2 w-28 rounded" onClick={handleCategory}>Group</button>
             </div>
             <div>
